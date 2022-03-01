@@ -9,6 +9,7 @@ namespace String_Calculator_2._1.Services
         {
             _errorHandling = errorHandling;
         }
+
         public List<int> ConvertStringNumbersToInt(string[] numbers)
         {
             List<int> numbersList = new List<int>();
@@ -23,7 +24,8 @@ namespace String_Calculator_2._1.Services
                 {
                     tempNumber = ConvertCharacterToInt(char.Parse(number));
                 }
-                else{
+                else
+                {
                     tempNumber = Math.Abs(Convert.ToInt32(number));
                 }
 
@@ -55,7 +57,7 @@ namespace String_Calculator_2._1.Services
         {
             var number = char.ToUpper(alphebet) - 65;
 
-            if(number > 9)
+            if (number > 9)
             {
                 return 0;
             }

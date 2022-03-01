@@ -4,20 +4,19 @@ using String_Calculator_2._1.Interfaces;
 using String_Calculator_2._1.Services;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 
 namespace StringCalculatorTest
 {
     public class NumbersTest
     {
-        private Numbers _numbers;
+        private NumbersService _numbers;
         private IErrorHandling _errorHandlingMock;
 
         [SetUp]
         public void Setup()
         {
             _errorHandlingMock = Substitute.For<IErrorHandling>();
-            _numbers = new Numbers(_errorHandlingMock);
+            _numbers = new NumbersService(_errorHandlingMock);
         }
 
         [Test]

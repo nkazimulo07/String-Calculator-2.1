@@ -7,13 +7,11 @@ namespace String_Calculator_2._1
     {
         private readonly ICalculations _calculator;
         private readonly ISplitNumber _split;
-        private readonly IDelimiters _delimiters;
         private readonly INumbers _numbers;
 
-        public StringCalculator(ICalculations calculator, IDelimiters delimiters, ISplitNumber split, INumbers numbers)
-        { 
+        public StringCalculator(ICalculations calculator, ISplitNumber split, INumbers numbers)
+        {
             _calculator = calculator;
-            _delimiters = delimiters;
             _split = split;
             _numbers = numbers;
         }
@@ -27,10 +25,9 @@ namespace String_Calculator_2._1
             return Calculations(numbers);
         }
 
-        public int Calculations(string numbers)
+        private int Calculations(string numbers)
         {
-            var delimiters = _delimiters.GetDelimiters(numbers);
-            var splitedNumbers = _split.SplitNumbers(numbers, delimiters);
+            var splitedNumbers = _split.SplitNumbers(numbers);
             var numbersList = _numbers.ConvertStringNumbersToInt(splitedNumbers);
             var difference = _calculator.PerfomCalculation(numbersList);
 

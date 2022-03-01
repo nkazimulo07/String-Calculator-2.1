@@ -8,6 +8,6 @@ namespace String_Calculator_2._1.Interfaces
 {
     public interface ISplitNumber
     {
-        string[] SplitNumbers(string numbers, List<string> delimiters);
+        string[] SplitNumbers(string numbers);
     }
 }

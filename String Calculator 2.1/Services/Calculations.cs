@@ -1,9 +1,4 @@
 ﻿using String_Calculator_2._1.Interfaces;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace String_Calculator_2._1.Services
 {
@@ -15,7 +10,7 @@ namespace String_Calculator_2._1.Services
 
             foreach (var number in numbersList)
             {
-                difference -= Convert.ToInt32(number);
+                difference -= number;
             }
 
             return difference;

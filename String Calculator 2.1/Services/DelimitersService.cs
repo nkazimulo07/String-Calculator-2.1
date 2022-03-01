@@ -38,25 +38,25 @@ namespace String_Calculator_2._1.Services
             return delimiters;
         }
 
-        public  List<string> MultipleDelimiters(string delimiters)
+        public List<string> MultipleDelimiters(string delimiters)
         {
-            char[] charsToTrim = {LeftSqureBracket, RightSqureBracket};
+            char[] charsToTrim = { LeftSqureBracket, RightSqureBracket };
             string cleanDelimiter = delimiters.Trim(charsToTrim);
             string[] multipleDelimiter = cleanDelimiter.Split(new string[] { squareBrackets }, StringSplitOptions.RemoveEmptyEntries);
 
             return multipleDelimiter.ToList();
         }
 
-        public List<string>  FlaggedDelimiter(string number)
+        public List<string> FlaggedDelimiter(string number)
         {
             var customStartingPoint = number.IndexOf(HashTags) + 2;
             var customEndingPoint = number.IndexOf(NewLine) - 6;
             var delimiter = number.Substring(customStartingPoint, customEndingPoint);
             char leftseperator = number[1];
-            char rightseperator = number[number.IndexOf(HashTags) -1];
+            char rightseperator = number[number.IndexOf(HashTags) - 1];
             char[] charsToTrim = { leftseperator, rightseperator };
             string cleanDelimiter = delimiter.Trim(charsToTrim);
-            string [] flaggedDelimites = cleanDelimiter.Split(new string[] { squareBrackets }, StringSplitOptions.RemoveEmptyEntries);
+            string[] flaggedDelimites = cleanDelimiter.Split(new string[] { squareBrackets }, StringSplitOptions.RemoveEmptyEntries);
 
             return flaggedDelimites.ToList();
         }
