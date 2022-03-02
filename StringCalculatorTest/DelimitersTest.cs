@@ -41,5 +41,33 @@ namespace StringCalculatorTest
             // assert
             Assert.AreEqual(expected, results);
         }
+
+        [Test]
+        public void WhenStringWithFlaggedDelimiter_UsingFlaggedDelimiter_ResultsReturnsDelimiterList()
+        {
+            // arrange
+            const string input = "<(>)##(*)\n1*2*3";
+            var expected = new List<string> { "*" };
+
+            // act 
+            var results = _delimiters.FlaggedDelimiter(input);
+
+            // assert
+            Assert.AreEqual(expected, results);
+        }
+
+        [Test]
+        public void WhentringWithFlaggedDelimiters_UsingFlaggedDelimiter_ResultsReturnsDelimiterList()
+        {
+            // arrange
+            const string input = "<[>}##[::}[;}\n1::2::3";
+            var expected = new List<string> { "::", ";" };
+
+            // act 
+            var results = _delimiters.FlaggedDelimiter(input);
+
+            // assert
+            Assert.AreEqual(expected, results);
+        }
     }
 }
